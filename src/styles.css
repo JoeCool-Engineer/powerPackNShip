@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+    --color-theme-green: #64a766;
+    --color-theme-sage: #b0c7b0;
+    --color-theme-cyan: #10f0f0;
+    --color-theme-gray: #a1a1a1;
+    --color-theme-dark: #383838;
+}
+/* Add these styles to your existing styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../public/background.jpg'); /* Update with your image path */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header styles */
+header {
+    transition: background-color 0.3s ease;
+}
+
+/* Remove previous header styles and add these new ones */
+.header-logo-section {
+    transition: all 0.3s ease;
+}
+
+/* When page is scrolled */
+.header-scrolled .header-logo-section {
+    background: white !important;
+}
+
+.header-nav-section {
+    background-color: #64a766 !important; /* Solid green for nav */
+}
+
+/* Add this JavaScript to your component */
+.scroll-header {
+    background-color: white;
+}
+
+/* Ensure content is above the background */
+#root {
+    position: relative;
+    z-index: 1;
+    --header-height: 120px; /* Adjust this value to match your header height */
+
+}
+
+/* Optional overlay for better readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.0); /* Adjust opacity as needed */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.leaflet-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-wrapper {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Hide zoom controls */
+.leaflet-control-zoom {
+    display: none;
+}
+
+
+
+@tailwind utilities;
