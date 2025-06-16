@@ -1,3 +1,5 @@
+// TODO: Addjustments for mobile responsiveness and accessibility Contact information refer to tailwindcss cheat sheet
+
 function Footer() {
     return (
         <footer className="bg-gray-800 text-white py-4 bottom-0 z-[999]">
