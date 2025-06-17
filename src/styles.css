@@ -12,11 +12,19 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: url('../public/background.jpg'); /* Update with your image path */
+    background-image: url('../public/background.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Add media query for mobile devices */
+@media screen and (max-width: 768px) {
+    body {
+        background-image: none;
+        background-color: white;
+    }
 }
 
 /* Header styles */
