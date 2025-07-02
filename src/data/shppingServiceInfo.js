@@ -15,7 +15,7 @@ export const shippingServices = {
         hours: [
             'Mon-Fri 3PM',
             'Saturdays: 1PM',
-            'ground no ground Saturdays'
+            'Ground no ground Saturdays'
         ]
     },
     ups: {
@@ -24,7 +24,7 @@ export const shippingServices = {
         hours: [
             'Mon-Fri 3PM',
             'Saturdays: 1PM',
-            'both air and ground'
+            'Both air and ground'
         ],
         services: [
             { text: 'UPS Next Day Air®', bold: false },
@@ -48,7 +48,7 @@ export const shippingServices = {
             { text: 'We do not offer Registered Mail services. Please see your local USPS location', bold: true }
         ],
         hours: [
-            'Mon-Fri 2Pm-4Pm',
+            'Mon-Fri 12PM-2PM',
             'Saturdays: 3PM',
             'USPS varies and we cannot guarantee times'
         ]
@@ -61,7 +61,7 @@ export const shippingServices = {
         ],
         hours: [
             'Mon-Fri 2:30PM',
-            'no weekend pickup dates'
+            'No weekend pickup dates'
         ]
     }
 };

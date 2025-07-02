@@ -31,7 +31,7 @@ function MapAndSchedule({isScrolled, isMobile}) {
         Tuesday: '8:30AM - 5:30PM',
         Wednesday: '8:30AM - 5:30PM',
         Thursday: '8:30AM - 5:30PM',
-        Friday: '8:30AM - 5:30PM',
+        Friday: '9:00AM - 2:00PM',
         Saturday: '10:00AM - 4:00PM',
         Sunday: 'Closed'
     };
