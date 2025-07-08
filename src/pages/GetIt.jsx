@@ -77,15 +77,15 @@ function GetIt() {
                     <h3 className="text-xl font-semibold text-theme-dark mb-4">Small Mailbox</h3>
                         <div className="grid grid-cols-3 gap-4">
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$39</p>
+                                <p className="text-lg font-semibold text-theme-dark">$42</p>
                                 <p className="text-sm text-theme-gray">3 months</p>
                             </div>
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$60</p>
+                                <p className="text-lg font-semibold text-theme-dark">$63</p>
                                 <p className="text-sm text-theme-gray">6 months</p>
                             </div>
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$108</p>
+                                <p className="text-lg font-semibold text-theme-dark">$114</p>
                                 <p className="text-sm text-theme-gray">1 year</p>
                             </div>
                         </div>
@@ -96,15 +96,15 @@ function GetIt() {
                     <h3 className="text-xl font-semibold text-theme-dark mb-4">Medium Mailbox</h3>
                         <div className="grid grid-cols-3 gap-4">
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$51</p>
+                                <p className="text-lg font-semibold text-theme-dark">$57</p>
                                 <p className="text-sm text-theme-gray">3 months</p>
                             </div>
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$90</p>
+                                <p className="text-lg font-semibold text-theme-dark">$96</p>
                                 <p className="text-sm text-theme-gray">6 months</p>
                             </div>
                             <div className="text-center p-4 bg-gray-50 rounded-lg">
-                                <p className="text-lg font-semibold text-theme-dark">$156</p>
+                                <p className="text-lg font-semibold text-theme-dark">$165</p>
                                 <p className="text-sm text-theme-gray">1 year</p>
                             </div>
                         </div>
