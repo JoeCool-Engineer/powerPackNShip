@@ -23,16 +23,16 @@ function PrintIt() {
                     </div>
                     <ul className="space-y-3 text-theme-gray">
                         <li className="flex justify-between">
-                            <span>Per notary signature</span>
-                            <span className="font-semibold">$8.00</span>
+                            <span>1-5 Notary Signatures</span>
+                            <span className="font-semibold">$10 ea</span>
                         </li>
                         <li className="flex justify-between">
-                            <span>Each witness signature</span>
-                            <span className="font-semibold">+$3.00</span>
+                            <span>6+ Notary Signatures</span>
+                            <span className="font-semibold">$8 ea</span>
                         </li>
                         <li className="flex justify-between">
-                            <span>I-9 notary</span>
-                            <span className="font-semibold">$20.00</span>
+                            <span>Additional Witness Signature</span>
+                            <span className="font-semibold">$3 ea</span>
                         </li>
                     </ul>
                 </div>
