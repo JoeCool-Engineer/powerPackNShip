@@ -7,6 +7,7 @@ import PrintIt from './pages/PrintIt';
 import GetIt from './pages/GetIt';
 import PackIt from './pages/PackIt';
 import Merchandise from './pages/Merchandise';
+import Fingerprint from './pages/Fingerprint';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/print-it" element={<PrintIt />} />
                     <Route path="/get-it" element={<GetIt />} />
                     <Route path="/merchandise" element={<Merchandise />} />
+                    <Route path="/fingerprint" element={<Fingerprint />} />
                 </Route>
             </Routes>
         </BrowserRouter>
