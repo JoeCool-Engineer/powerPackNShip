@@ -9,6 +9,7 @@ const navItems = [
     { name: 'Document Services', link: '/print-it' },
     { name: 'Mailboxes', link: '/get-it' },
     { name: 'Merchandise', link: '/merchandise' },
+    { name: 'Fingerprinting', link: '/fingerprint' },
 ];
 
 const mobileNavItems = [
@@ -18,6 +19,7 @@ const mobileNavItems = [
     { name: 'Document Services', link: '/print-it' },
     { name: 'Mailboxes', link: '/get-it' },
     { name: 'Merchandise', link: '/merchandise' },
+    { name: 'Fingerprinting', link: '/fingerprint' },
 ];
 
 function Navigation() {
