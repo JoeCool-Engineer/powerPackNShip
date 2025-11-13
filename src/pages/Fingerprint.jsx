@@ -1,116 +1,191 @@
+import { Helmet } from "react-helmet";
+
 export default function FingerprintingPricingPage() {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Power Pack and Ship",
+    image: "https://powerpackandship.com/images/logo.png",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "270 E Hunt Hwy Ste 16",
+      addressLocality: "San Tan Valley",
+      addressRegion: "AZ",
+      postalCode: "85143",
+      addressCountry: "US",
+    },
+    telephone: "+1-480-987-8517",
+    url: "https://powerpackandship.com/fingerprinting",
+    priceRange: "$$",
+    openingHours: "Mo-Fr 09:00-18:00",
+    sameAs: ["https://www.facebook.com/powerpackandship"],
+  };
+
   return (
-    <div className="min-h-screen text-slate-800">
-      {/* Header Section */}
-        <section className="mx-auto max-w-6xl px-4 py-12 text-center">
-            <h1 className="text-3xl font-bold md:text-4xl text-green-700">Arizona LiveScan Fingerprinting Services</h1>
-            <h2 className="mt-4 text-xl font-bold md:text-2xl text-slate-700">No Appointment Needed</h2>
-            <p className="mt-4 text-lg text-slate-700">Looking for fast, reliable fingerprinting in Arizona? Our store partners with Arizona Livescan to provide professional, inkless fingerprinting cards for background checks. Whether you need fingerprint cards for licensing, employment, or certifications, we make it quick and convenient — no appointment required!</p>
-        </section>        
-      {/* Comparison table */}
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <h3 className="text-xl font-semibold tracking-tight md:text-2xl">Pricing Overview</h3>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
-          <table className="w-full min-w-[720px] text-sm">
-            <thead className="bg-[#4CAF50] text-white font-semibold text-lg">
-              <tr>
-                <th className="px-4 py-3 text-left">Service Type</th>
-                <th className="px-4 py-3 text-center">Chain of Custody</th>
-                <th className="px-4 py-3 text-center">Number of Cards</th>
-                <th className="px-4 py-3 text-center">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { service: 'AZ Concealed Carry Weapon', custody: '', cards: '2', price: '$44' },
-                { service: 'AZ Insurance - Paper Prints Only', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'AZ Liquor', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'AZ Marijuana/Dispensary Agent/Facility Agent, etc.', custody: 'Required', cards: '2', price: '$49' },
-                { service: 'AZ Motor Vehicle', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'AZ Nursing - Paper Prints Only', custody: '', cards: '1', price: '$29' },
-                { service: 'AZ Pest Control', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'AZ Security Card', custody: '', cards: '1', price: '$29' },
-                { service: 'AZ DPS 2000 - DPS Fingerprint Check', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'Fingerprint Clearance Card - Identity Verified (IVP)', custody: 'Required', cards: '1', price: '$34' },
-                { service: 'Fingerprint Clearance Card - Level One', custody: '', cards: '1', price: '$29' },
-              ].map((item) => (
-                <tr
-                  key={item.service}
-                  className="border-t cursor-pointer transition-colors hover:bg-green-100 hover:text-black hover:font-semibold"
-                >
-                  <td className="px-4 py-3">{item.service}</td>
-                  <td className="px-4 py-3 text-center">{item.custody}</td>
-                  <td className="px-4 py-3 text-center">{item.cards}</td>
-                  <td className="px-4 py-3 text-center">{item.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Arizona LiveScan Fingerprinting | Power Pack and Ship</title>
+        <meta
+          name="description"
+          content="Fast, certified Arizona LiveScan fingerprinting at Power Pack and Ship in San Tan Valley, AZ. Walk-ins welcome — no appointment needed."
+        />
+      </Helmet>
 
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <h3 className="text-xl font-semibold tracking-tight md:text-2xl">Other Fingerprinting Options</h3>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
-          <table className="w-full min-w-[720px] text-sm">
-            <thead className="bg-[#4CAF50] text-white font-semibold text-lg">
-              <tr>
-                <th className="px-4 py-3 text-left">Options</th>
-                <th className="px-4 py-3 text-center">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { option: 'Out-of-State or Not Listed Fingerprinting - First Card', price: '$29' },
-                { option: 'Each Additional Card', price: '$15' },
-                { option: 'Chain of Custody Process', price: '$5' },
-                { option: 'Notary Services (available after 1:00pm)', price: '$10' },
-              ].map((item) => (
-                <tr
-                  key={item.option}
-                  className="border-t cursor-pointer transition-colors hover:bg-green-100 hover:text-black hover:font-semibold"
-                >
-                  <td className="px-4 py-3">{item.option}</td>
-                  <td className="px-4 py-3 text-center">{item.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <div className="min-h-screen text-slate-800">
 
+        {/* =========================== */}
+        {/* MOBILE-FRIENDLY HEADER */}
+        {/* =========================== */}
+        <section className="mx-auto max-w-6xl px-4 py-10 text-center">
+          <h1 className="text-3xl font-bold md:text-4xl text-green-700 leading-tight">
+            Arizona LiveScan Fingerprinting Services <br className="hidden md:block" />
+            <span className="text-slate-800">No Appointment Needed</span>
+          </h1>
 
-      {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-6xl px-4 py-12">
-        <div className="mx-auto max-w-2xl text-center">
-          <h3 className="text-xl font-semibold tracking-tight md:text-2xl">Frequently Asked Questions</h3>
-        </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {[
-            {
-              q: 'Do I need an appointment?',
-              a: 'Walk-ins are welcome when capacity allows, but appointments guarantee service at your preferred time.'
-            },
-            {
-              q: 'What should I bring?',
-              a: 'Bring a valid government ID and any agency forms or ORI numbers required for your submission.'
-            },
-            {
-              q: 'Do you offer Live Scan?',
-              a: 'Where permitted, we provide electronic Live Scan capture and can transmit to authorized recipients. Availability varies by state.'
-            },
-            {
-              q: 'What if my prints are rejected?',
-              a: 'If an image quality or capture error is the cause, we reprint at no charge within 30 days. Agency rejections for reasons unrelated to capture are billed at normal rates.'
-            },
-          ].map((item) => (
-            <div key={item.q} className="rounded-3xl border border-slate-200 p-6 bg-white">
-              <h4 className="font-medium">{item.q}</h4>
-              <p className="mt-2 text-sm text-slate-600">{item.a}</p>
+          <p className="mt-4 text-base md:text-lg text-slate-700 max-w-2xl mx-auto">
+            Quick, professional fingerprinting services for licensing,
+            employment, background checks, and more — walk in anytime.
+          </p>
+        </section>
+
+        {/* =========================== */}
+        {/* CITY SECTIONS – MOBILE STACK */}
+        {/* =========================== */}
+        <section className="mx-auto max-w-6xl px-4 pb-4">
+          <h2 className="text-xl md:text-2xl font-semibold">
+            Serving Queen Creek, San Tan Valley, Mesa & Florence
+          </h2>
+
+          <p className="mt-3 text-sm md:text-base text-slate-600">
+            Power Pack and Ship provides fast, walk-in fingerprinting to residents
+            across the East Valley. No appointment required.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Queen Creek */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
+              <h3 className="text-lg font-semibold">Near Queen Creek, AZ</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                Just minutes from Queen Creek — ideal for DPS checks, security
+                licensing, and employment fingerprinting.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+
+            {/* San Tan Valley */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
+              <h3 className="text-lg font-semibold">San Tan Valley, AZ</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                Located at <strong>270 E Hunt Hwy Ste 16</strong>. Your closest
+                walk-in option for fingerprint clearance cards, background checks,
+                and LiveScan.
+              </p>
+            </div>
+
+            {/* Mesa */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
+              <h3 className="text-lg font-semibold">Mesa, AZ</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                Mesa residents visit us for quick, accurate fingerprinting for
+                licensing, employment, and MVD services.
+              </p>
+            </div>
+
+            {/* Florence */}
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
+              <h3 className="text-lg font-semibold">Florence, AZ</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                Convenient option for Florence residents needing state or federal
+                fingerprinting without long waits.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* =========================== */}
+        {/* MOBILE SCROLLABLE TABLE */}
+        {/* =========================== */}
+        <section className="mx-auto max-w-6xl px-4 py-12">
+          <h3 className="text-xl md:text-2xl font-semibold">
+            Pricing Overview
+          </h3>
+
+          <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+            <table className="w-full min-w-[650px] text-sm md:text-base">
+              <thead className="bg-green-600 text-white font-semibold text-base md:text-lg">
+                <tr>
+                  <th className="px-4 py-3 text-left">Service Type</th>
+                  <th className="px-4 py-3 text-center">Cards</th>
+                  <th className="px-4 py-3 text-center">Price</th>
+                  <th className="px-4 py-3 text-center">Custody</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {[
+                  { service: "AZ Concealed Carry Weapon", cards: "2", price: "$44", custody: "" },
+                  { service: "AZ Insurance - Paper Prints Only", cards: "1", price: "$34", custody: "Required" },
+                  { service: "AZ Liquor", cards: "1", price: "$34", custody: "Required" },
+                  { service: "AZ Marijuana / Dispensary Agent", cards: "2", price: "$49", custody: "Required" },
+                  { service: "AZ Motor Vehicle", cards: "1", price: "$34", custody: "Required" },
+                  { service: "AZ Nursing", cards: "1", price: "$29", custody: "" },
+                  { service: "AZ Pest Control", cards: "1", price: "$34", custody: "Required" },
+                  { service: "AZ Security Guard Card", cards: "1", price: "$29", custody: "" },
+                  { service: "AZ DPS Fingerprint Check", cards: "1", price: "$34", custody: "Required" },
+                  { service: "IVP Clearance Card", cards: "1", price: "$34", custody: "Required" },
+                  { service: "Level One Clearance Card", cards: "1", price: "$29", custody: "" },
+                ].map((item) => (
+                  <tr
+                    key={item.service}
+                    className="border-t transition-all hover:bg-green-100 hover:font-semibold hover:text-black"
+                  >
+                    <td className="px-4 py-3">{item.service}</td>
+                    <td className="px-4 py-3 text-center">{item.cards}</td>
+                    <td className="px-4 py-3 text-center">{item.price}</td>
+                    <td className="px-4 py-3 text-center">{item.custody}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* =========================== */}
+        {/* FAQ */}
+        {/* =========================== */}
+        <section className="mx-auto max-w-6xl px-4 py-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-center">
+            Frequently Asked Questions
+          </h3>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                q: "Do I need an appointment?",
+                a: "Walk-ins are always welcome during business hours.",
+              },
+              {
+                q: "What should I bring?",
+                a: "Bring a valid ID and any agency paperwork or ORI numbers.",
+              },
+              {
+                q: "Do you offer LiveScan?",
+                a: "Yes. Electronic LiveScan capture is available where state regulations allow.",
+              },
+              {
+                q: "What if my prints are rejected?",
+                a: "If rejected due to image quality, we reprint for free within 30 days.",
+              },
+            ].map((item) => (
+              <div key={item.q} className="rounded-3xl border border-slate-200 bg-white p-5 md:p-6">
+                <h4 className="font-medium">{item.q}</h4>
+                <p className="mt-2 text-sm text-slate-600">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
