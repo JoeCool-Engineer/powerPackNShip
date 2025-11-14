@@ -1,0 +1,96 @@
+{
+  "primaryServices": [
+    {
+      "service": "AZ Concealed Carry Weapon",
+      "cards": "2",
+      "price": "$44",
+      "custody": ""
+    },
+    {
+      "service": "AZ Insurance - Paper Prints Only",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "AZ Liquor",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "AZ Marijuana / Dispensary Agent / Facility Agent",
+      "cards": "2",
+      "price": "$49",
+      "custody": "Required"
+    },
+    {
+      "service": "AZ Motor Vehicle",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "AZ Nursing - Paper Prints Only",
+      "cards": "1",
+      "price": "$29",
+      "custody": ""
+    },
+    {
+      "service": "AZ Pest Control",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "AZ Security Card",
+      "cards": "1",
+      "price": "$29",
+      "custody": ""
+    },
+    {
+      "service": "AZ DPS 2000 - DPS Fingerprint Check",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "Fingerprint Clearance Card - Identity Verified (IVP)",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Required"
+    },
+    {
+      "service": "Fingerprint Clearance Card - Level One",
+      "cards": "1",
+      "price": "$29",
+      "custody": ""
+    }
+  ],
+  "additionalServices": [
+    {
+      "service": "Standard Ink Card (FD-258 or similar)",
+      "cards": "1",
+      "price": "$25",
+      "custody": ""
+    },
+    {
+      "service": "Additional Ink Card (same visit)",
+      "cards": "1",
+      "price": "$10",
+      "custody": ""
+    },
+    {
+      "service": "Out-of-State / Mail-In Fingerprint Cards",
+      "cards": "2",
+      "price": "$45",
+      "custody": ""
+    },
+    {
+      "service": "Employment / Background Check (General)",
+      "cards": "1",
+      "price": "$34",
+      "custody": "Varies by agency"
+    }
+  ]
+}
