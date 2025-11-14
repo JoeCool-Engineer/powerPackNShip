@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-1-2026",
+    "label": "New Year's Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2026-5-25",
+    "label": "Memorial Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2026-7-4",
+    "label": "Independence Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2026-9-7",
+    "label": "Labor Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2025-11-27",
+    "label": "Thanksgiving Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2025-11-15",
+    "label": "Christmas Eve",
+    "adjustedHours": "9:00 AM - 1:00 PM"
+  },
+  {
+    "date": "2025-11-16",
+    "label": "Christmas Day",
+    "adjustedHours": "Closed"
+  },
+  {
+    "date": "2025-12-31",
+    "label": "New Year's Eve",
+    "adjustedHours": "9:00 AM - 1:00 PM"
+  }
+]
