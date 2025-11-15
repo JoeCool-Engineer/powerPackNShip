@@ -37,7 +37,7 @@ export default function FingerprintingPricingPage() {
 
           <p className="mt-3 text-sm md:text-base text-slate-600 max-w-3xl mx-auto">
             Power Pack and Ship provides fingerprint cards through Arizona LiveScan for individuals and
-            businesses across the East Valley. We’re conveniently located on Hunt Highway in San Tan Valley. Wec can also take care of 
+            businesses across the East Valley. We are conveniently located on Hunt Highway in San Tan Valley. We can also take care of 
             shipping your fingerprint cards for you!
           </p>
         </section>
@@ -82,7 +82,7 @@ export default function FingerprintingPricingPage() {
 
         {/* ADDITIONAL SERVICES TABLE */}
         <section className="mx-auto max-w-6xl px-4 py-8 text-center">
-          <h3 className="text-xl md:text-2xl font-semibold">Ink Card & General Fingerprinting</h3>
+          <h3 className="text-xl md:text-2xl font-semibold">Other Fingerprinting Options</h3>
 
           <p className="mt-2 text-sm md:text-base text-slate-600 max-w-3xl mx-auto">
             Additional fingerprint card services for out-of-state or non-standard requests.
@@ -93,9 +93,7 @@ export default function FingerprintingPricingPage() {
               <thead className="bg-[#4CAF50] text-black font-semibold text-sm md:text-lg">
                 <tr>
                   <th className="px-4 py-3 text-left">Service Type</th>
-                  <th className="px-4 py-3 text-center hidden md:table-cell">Cards</th>
                   <th className="px-4 py-3 text-center">Price</th>
-                  <th className="px-4 py-3 text-center hidden md:table-cell">Custody</th>
                 </tr>
               </thead>
 
@@ -106,9 +104,7 @@ export default function FingerprintingPricingPage() {
                     className="border-t transition-all hover:bg-green-100 hover:font-semibold hover:text-black"
                   >
                     <td className="px-4 py-3 text-left">{item.service}</td>
-                    <td className="px-4 py-3 text-center hidden md:table-cell">{item.cards}</td>
                     <td className="px-4 py-3 text-center">{item.price}</td>
-                    <td className="px-4 py-3 text-center hidden md:table-cell">{item.custody}</td>
                   </tr>
                 ))}
               </tbody>
@@ -122,12 +118,12 @@ export default function FingerprintingPricingPage() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
+              { q: "Can you electronically send in my fingerprints to the organization?", a: "No, we cannot. We print the fingerprint cards and depending on what is required, we can mail them in for you or you can hand them in." },
+              { q: "What should I bring?", a: "Bring your government-issued ID  and the paperwork that tells you what type of fingerprints are required. Power Pack and Ship cannot determin what type of fingerprints you need as each organization has different requirements." },
               { q: "Do I need an appointment?", a: "Walk-ins are welcome during all business hours, no need to make an appointment." },
               { q: "Do you offer LiveScan?", a: "Yes, we are partnered with Arizona Livescan." },
               { q: "What if prints are rejected?", a: "Bring in the rejection letter and we will reprint at no charge." },
               { q: "Do you fingerprint for Hazmat?", a: "No, at  this time we do not have that capability." },
-              { q: "Can you electronically send in my fingerprints to the organization?", a: "No, we cannot. We print the fingerprint cards and depending on what is required, we can mail them in for you or you can hand them in." },
-              { q: "What should I bring?", a: "Bring your government-issued ID  and the paperwork that tells you what type of fingerprints are required. Power Pack and Ship cannot determin what type of fingerprints you need as each organization has different requirements." },
             ].map((item) => (
               <div key={item.q} className="rounded-xl border bg-white p-5 md:p-6">
                 <h4 className="font-medium">{item.q}</h4>

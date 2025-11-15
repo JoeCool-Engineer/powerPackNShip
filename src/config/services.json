@@ -69,28 +69,20 @@
   ],
   "additionalServices": [
     {
-      "service": "Standard Ink Card (FD-258 or similar)",
-      "cards": "1",
-      "price": "$25",
-      "custody": ""
+      "service": "Out-of-State or Not Listed Fingerprinting - First Card",
+      "price": "$29"
     },
     {
-      "service": "Additional Ink Card (same visit)",
-      "cards": "1",
-      "price": "$10",
-      "custody": ""
+      "service": "Each Additional Card",
+      "price": "$15"
     },
     {
-      "service": "Out-of-State / Mail-In Fingerprint Cards",
-      "cards": "2",
-      "price": "$45",
-      "custody": ""
+      "service": "Chain of Custody Process",
+      "price": "$5"
     },
     {
-      "service": "Employment / Background Check (General)",
-      "cards": "1",
-      "price": "$34",
-      "custody": "Varies by agency"
+      "service": "Notary Services (Available after 1:00 PM)",
+      "price": "$10"
     }
   ]
 }
