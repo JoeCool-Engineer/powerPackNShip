@@ -19,54 +19,27 @@ export default function FingerprintingPricingPage() {
         {/* Hero / Intro (space reduced by 50%) */}
         <section className="mx-auto max-w-6xl px-4 py-5 text-center">
           <h1 className="text-3xl font-bold md:text-4xl text-green-700 leading-tight">
-            Arizona LiveScan & Ink Card Fingerprinting
+            Fingerprint Cards through Arizona LiveScan
             <br className="hidden md:block" />
             <span className="text-slate-800 block md:inline"> No Appointment Needed</span>
           </h1>
 
           <p className="mt-4 text-base md:text-lg text-slate-700 max-w-2xl mx-auto">
-            Walk in for fast, professional fingerprinting services for licensing, employment, DPS
-            fingerprint clearance cards, and more.
+            Walk in for fast, professional fingerprinting services for licensing, employment, clearance cards, and more.
           </p>
         </section>
 
         {/* City Coverage */}
         <section className="mx-auto max-w-6xl px-4 pb-6 text-center">
           <h2 className="text-xl md:text-2xl font-semibold">
-            Serving Queen Creek, San Tan Valley & Florence
+            Serving San Tan Valley, Queen Creek, & Florence
           </h2>
 
           <p className="mt-3 text-sm md:text-base text-slate-600 max-w-3xl mx-auto">
-            Power Pack and Ship provides LiveScan and ink card fingerprinting for individuals and
-            businesses across the East Valley. We’re conveniently located on Hunt Highway in San Tan Valley.
+            Power Pack and Ship provides fingerprint cards through Arizona LiveScan for individuals and
+            businesses across the East Valley. We’re conveniently located on Hunt Highway in San Tan Valley. Wec can also take care of 
+            shipping your fingerprint cards for you!
           </p>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Queen Creek */}
-            <div className="rounded-xl border bg-white p-5 md:p-6 text-center">
-              <h3 className="text-lg font-semibold">Near Queen Creek, AZ</h3>
-              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                A quick drive from Queen Creek, ideal for DPS checks, licensing, and employment fingerprinting.
-              </p>
-            </div>
-
-            {/* San Tan Valley */}
-            <div className="rounded-xl border bg-white p-5 md:p-6 text-center">
-              <h3 className="text-lg font-semibold">San Tan Valley, AZ</h3>
-              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                Located at <strong>270 E Hunt Hwy Ste 16, San Tan Valley, AZ 85143</strong>.
-              </p>
-            </div>
-
-            {/* Florence */}
-            <div className="rounded-xl border bg-white p-5 md:p-6 text-center">
-              <h3 className="text-lg font-semibold">Near Florence, AZ</h3>
-              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                Florence residents rely on Power Pack and Ship for state, federal,
-                and employment-related fingerprinting without long waits.
-              </p>
-            </div>
-          </div>
         </section>
 
         {/* PRIMARY SERVICES TABLE */}
@@ -149,10 +122,12 @@ export default function FingerprintingPricingPage() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { q: "Do I need an appointment?", a: "Walk-ins are welcome during all business hours." },
-              { q: "What should I bring?", a: "A government-issued ID and any fingerprint paperwork." },
-              { q: "Do you offer LiveScan?", a: "Yes—availability varies by agency requirements." },
-              { q: "What if prints are rejected?", a: "We reprint at no charge for 30 days." }
+              { q: "Do I need an appointment?", a: "Walk-ins are welcome during all business hours, no need to make an appointment." },
+              { q: "Do you offer LiveScan?", a: "Yes, we are partnered with Arizona Livescan." },
+              { q: "What if prints are rejected?", a: "Bring in the rejection letter and we will reprint at no charge." },
+              { q: "Do you fingerprint for Hazmat?", a: "No, at  this time we do not have that capability." },
+              { q: "Can you electronically send in my fingerprints to the organization?", a: "No, we cannot. We print the fingerprint cards and depending on what is required, we can mail them in for you or you can hand them in." },
+              { q: "What should I bring?", a: "Bring your government-issued ID  and the paperwork that tells you what type of fingerprints are required. Power Pack and Ship cannot determin what type of fingerprints you need as each organization has different requirements." },
             ].map((item) => (
               <div key={item.q} className="rounded-xl border bg-white p-5 md:p-6">
                 <h4 className="font-medium">{item.q}</h4>
