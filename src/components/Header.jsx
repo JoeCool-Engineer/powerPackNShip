@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import Navigation from "./Navigation";
 import holidays from "../config/holidays.json";
 
+const MAPS_CID_URL = "https://www.google.com/maps?cid=12015125235544774477";
+
 // Get all holidays whose 7-day preview window includes today
 function getUpcomingHolidays(holidayConfig) {
   const today = new Date();
@@ -160,13 +162,13 @@ export default function Header() {
             )}
           </div>
 
-          {/* CENTER: Hours + holiday notes (collapsible, not unmounted) */}
+          {/* CENTER: Hours + holiday notes */}
           <div
             className={`flex-1 flex justify-center overflow-hidden transition-[max-height,opacity] duration-200 ${
               collapseInfo ? "max-h-0 opacity-0 pointer-events-none" : "max-h-96 opacity-100"
             }`}
           >
-            <div className="text-center text-xs md:text-sm text-slate-700 leading-snug">
+            <div className="text-center text-sm md:text-sm text-slate-700 leading-snug">
               <div className="font-semibold text-slate-900">{schedule.title}</div>
               {schedule.lines.map((line) => (
                 <div key={line}>{line}</div>
@@ -186,7 +188,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* RIGHT: Phone + Address (collapsible, not unmounted) */}
+          {/* RIGHT: Phone + Address */}
           <div
             className={`text-right text-xs md:text-sm text-slate-700 leading-snug overflow-hidden transition-[max-height,opacity] duration-200 ${
               collapseInfo ? "max-h-0 opacity-0 pointer-events-none" : "max-h-40 opacity-100"
@@ -195,11 +197,20 @@ export default function Header() {
             <div className="font-semibold text-green-700 text-sm md:text-base">
               <a href="tel:14809878517">(480) 987-8517</a>
             </div>
-            <div className="mt-1">
+
+            {/* Address now links to Google Maps CID */}
+            <a
+              href={MAPS_CID_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1 inline-block hover:underline"
+              aria-label="View Power Pack and Ship on Google Maps"
+              title="View us on Google"
+            >
               270 E Hunt Hwy Ste 16
               <br />
               San Tan Valley, AZ 85143
-            </div>
+            </a>
           </div>
         </div>
       </div>
