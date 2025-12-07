@@ -22,7 +22,7 @@ const mobileNavItems = [
     { name: 'Fingerprinting', link: '/fingerprint' },
 ];
 
-function Navigation() {
+export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
@@ -77,5 +77,3 @@ function Navigation() {
         </div>
     );
 }
-
-export default Navigation;

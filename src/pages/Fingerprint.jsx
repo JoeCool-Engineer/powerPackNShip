@@ -10,7 +10,7 @@ export default function FingerprintingPricingPage() {
         <title>Arizona LiveScan Fingerprinting | Power Pack and Ship</title>
         <meta
           name="description"
-          content="LiveScan & ink card fingerprinting at Power Pack and Ship in San Tan Valley, AZ. Serving Queen Creek and Florence with fast, walk-in fingerprinting services."
+          content="LiveScan fingerprinting at Power Pack and Ship in San Tan Valley, AZ. Serving Queen Creek and Florence with fast, walk-in fingerprinting services."
         />
         <link rel="canonical" href="https://powerpackandship.com/fingerprinting" />
       </Helmet>
@@ -45,11 +45,11 @@ export default function FingerprintingPricingPage() {
         {/* PRIMARY SERVICES TABLE */}
         <section className="mx-auto max-w-6xl px-4 py-8 text-center">
           <h3 className="text-xl md:text-2xl font-semibold">
-            Arizona DPS & Licensing Fingerprinting
+            FD-258, Arizona DPS & Licensing Fingerprinting
           </h3>
 
           <p className="mt-2 text-sm md:text-base text-slate-600 max-w-3xl mx-auto">
-            Common Arizona fingerprinting services. Prices shown are per person.
+            Common Arizona fingerprinting services for employment, licensing and volunteering. Prices shown are per person.
           </p>
 
           <div className="mt-4 overflow-x-auto rounded-xl border bg-white">
@@ -118,12 +118,14 @@ export default function FingerprintingPricingPage() {
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { q: "Can you electronically send in my fingerprints to the organization?", a: "No, we cannot. We print the fingerprint cards and depending on what is required, we can mail them in for you or you can hand them in." },
+              { q: "Can you print multiple fingerprint cards per one visit?", a: "Yes, we can print additional fingerprint cards upon request. Many customers request this option to have an extra card for their records. Each additional card is at a discounted rate of $15 per card." },
               { q: "What should I bring?", a: "Bring your government-issued ID  and the paperwork that tells you what type of fingerprints are required. Power Pack and Ship cannot determin what type of fingerprints you need as each organization has different requirements." },
+              { q: "Can you electronically send in my fingerprints to the organization?", a: "No, we cannot. We print the fingerprint cards and depending on what is required, we can mail them in for you or you can hand them in." },
               { q: "Do I need an appointment?", a: "Walk-ins are welcome during all business hours, no need to make an appointment." },
               { q: "Do you offer LiveScan?", a: "Yes, we are partnered with Arizona Livescan." },
               { q: "What if prints are rejected?", a: "Bring in the rejection letter and we will reprint at no charge." },
               { q: "Do you fingerprint for Hazmat?", a: "No, at  this time we do not have that capability." },
+              { q: "Do you do ink fingerprints?", a: "No, we do not offer ink fingerprints." },
             ].map((item) => (
               <div key={item.q} className="rounded-xl border bg-white p-5 md:p-6">
                 <h4 className="font-medium">{item.q}</h4>

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-function ServiceCard({ title, icon, description, link }) {
+export default function ServiceCard({ title, icon, description, link }) {
     return (
         <div className="bg-white rounded-lg shadow-md p-6 transition-transform hover:scale-105 border-t-4 border-theme-green">
             <div className="mb-4">
@@ -19,5 +19,3 @@ function ServiceCard({ title, icon, description, link }) {
         </div>
     );
 }
-
-export default ServiceCard;

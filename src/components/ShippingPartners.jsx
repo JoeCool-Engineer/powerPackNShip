@@ -1,9 +1,9 @@
 import ShippingServiceCard from './ShippingServiceCard';
-import {shippingServices} from "../data/shppingServiceInfo.js";
+import { shippingServices } from "../data/shppingServiceInfo.js";
 
-function ShippingPartners({ showDetails }) {
+export default function ShippingPartners({ showDetails }) {
     return (
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {Object.values(shippingServices).map((provider) => (
                 <ShippingServiceCard
                     key={provider.name}
@@ -17,5 +17,3 @@ function ShippingPartners({ showDetails }) {
         </div>
     );
 }
-
-export default ShippingPartners;

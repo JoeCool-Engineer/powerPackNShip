@@ -7,6 +7,18 @@
     --color-theme-gray: #a1a1a1;
     --color-theme-dark: #383838;
 }
+
+
+/* Prevent scrollbar width jitter near breakpoints */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Fallback for browsers without scrollbar-gutter */
+@supports not (scrollbar-gutter: stable) {
+    html { overflow-y: scroll; }
+}
+
 /* Add these styles to your existing styles.css */
 body {
     margin: 0;
