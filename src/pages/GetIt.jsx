@@ -293,6 +293,25 @@ export default function GetIt() {
             ))}
           </div>
         </section>
+
+        {/* Queen Creek Location Reinforcement */}
+        <section className="mx-auto max-w-6xl px-4 pb-6 text-center">
+          <div className="mt-6 grid grid-cols-1">
+            <div className="rounded-xl border bg-white p-5 md:p-6 text-center shadow-md max-w-3xl mx-auto">
+              <h2 className="text-lg md:text-xl font-semibold text-theme-dark">
+                Private Mailbox Rental Near Queen Creek, AZ
+              </h2>
+
+              <p className="mt-2 text-sm md:text-base text-slate-600 leading-relaxed">
+                If you’re searching for a <strong>PO Box near Queen Creek</strong>, our private
+                mailboxes in San Tan Valley offer a secure, convenient alternative with a
+                <strong> real street address</strong>. You can receive mail and packages from
+                all major carriers — ideal for residents, commuters, and small businesses.
+              </p>
+            </div>
+          </div>
+        </section>
+
       </div>
     </>
   );
