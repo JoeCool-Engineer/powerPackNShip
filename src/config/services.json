@@ -64,7 +64,7 @@
       "service": "Fingerprint Clearance Card - Non IVP",
       "cards": "1",
       "price": "$34",
-      "custody": ""
+      "custody": "Required"
     }
   ],
   "additionalServices": [
