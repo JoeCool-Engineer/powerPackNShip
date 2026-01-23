@@ -19,7 +19,7 @@
       "custody": "Required"
     },
     {
-      "service": "AZ Marijuana / Dispensary Agent / Facility Agent",
+      "service": "AZ Marijuana / Dispensary Agent / Facility Agent, etc.",
       "cards": "2",
       "price": "$49",
       "custody": "Required"
@@ -61,9 +61,9 @@
       "custody": "Required"
     },
     {
-      "service": "Fingerprint Clearance Card - Level One",
+      "service": "Fingerprint Clearance Card - Non IVP",
       "cards": "1",
-      "price": "$29",
+      "price": "$34",
       "custody": ""
     }
   ],
