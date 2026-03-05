@@ -45,7 +45,7 @@ export default function Footer() {
               {BUSINESS.email}
             </a>
           </div>
-
+          
           {/* RIGHT: Social + Copyright */}
           <div className="flex items-center space-x-4 text-gray-400 text-sm">
             <a
