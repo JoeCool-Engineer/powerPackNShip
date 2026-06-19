@@ -13,9 +13,9 @@ export const shippingServices = {
             { text: 'And more...', bold: false }
         ],
         hours: [
-            'Mon-Fri 3PM',
+            'Mon-Fri 2PM',
             'Saturdays: 1PM',
-            'Ground no ground Saturdays'
+            'No FedEx Ground on Saturdays'
         ]
     },
     ups: {
