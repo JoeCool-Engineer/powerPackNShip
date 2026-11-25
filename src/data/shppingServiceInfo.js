@@ -15,7 +15,6 @@ export const shippingServices = {
         hours: [
             'Mon-Fri 2PM',
             'Saturdays: 1PM',
-            'No FedEx Ground on Saturdays'
         ]
     },
     ups: {
@@ -23,7 +22,7 @@ export const shippingServices = {
         logo: '/UPS_accessPoint_logo.png',
         hours: [
             'Mon-Fri 3PM',
-            'Saturdays: 1PM',
+            'Saturdays: 2PM',
             'Both air and ground'
         ],
         services: [

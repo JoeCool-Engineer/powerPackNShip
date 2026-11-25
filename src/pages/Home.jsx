@@ -16,7 +16,7 @@ export default function Home() {
           <li>Packing &amp; Shipping supplies</li>
         </ul>
       ),
-      link: "/pack-it",
+      link: "/pack-ship",
     },
     {
       title: "Ship It",
@@ -29,7 +29,7 @@ export default function Home() {
           <li>Drop Offs</li>
         </ul>
       ),
-      link: "/pack-it",
+      link: "/pack-ship",
     },
     {
       title: "Print It",
@@ -42,7 +42,7 @@ export default function Home() {
           <li>Color, and Black and White</li>
         </ul>
       ),
-      link: "/print-it",
+      link: "/document-services",
     },
     {
       title: "Get It",
@@ -56,7 +56,7 @@ export default function Home() {
           <li>Notary</li>
         </ul>
       ),
-      link: "/get-it",
+      link: "/mailbox-rental",
     },
   ];
 

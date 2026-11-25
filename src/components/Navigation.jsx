@@ -4,22 +4,10 @@ import {Link} from "react-router-dom";
 
 const navItems = [
     { name: 'Home', link: '/' },
-    // { name: 'Tracking', link: '/ship-it' },
-    { name: 'Pack and Ship', link: '/pack-it' },
-    { name: 'Document Services', link: '/print-it' },
-    { name: 'Mailboxes', link: '/get-it' },
-    { name: 'Merchandise', link: '/merchandise' },
-    { name: 'Fingerprinting', link: '/fingerprint' },
-];
-
-const mobileNavItems = [
-    { name: 'Home', link: '/' },
-    // { name: 'Tracking', link: '/ship-it' },
-    { name: 'Pack and Ship', link: '/pack-it' },
-    { name: 'Document Services', link: '/print-it' },
-    { name: 'Mailboxes', link: '/get-it' },
-    { name: 'Merchandise', link: '/merchandise' },
-    { name: 'Fingerprinting', link: '/fingerprint' },
+    { name: 'Pack and Ship', link: '/pack-ship' },
+    { name: 'Document Services', link: '/document-services' },
+    { name: 'Mailboxes', link: '/mailbox-rental' },
+    { name: 'Fingerprinting', link: '/fingerprinting' },
 ];
 
 export default function Navigation() {
@@ -62,7 +50,7 @@ export default function Navigation() {
             {/* Mobile Menu */}
             <div className={`md:hidden w-full ${isMobileMenuOpen ? '' : 'hidden'}`} id="mobile-menu">
                 <div className="px-2 pt-2 pb-3 space-y-1">
-                    {mobileNavItems.map((item) => (
+                    {navItems.map((item) => (
                         <Link
                             key={item.name}
                             to={item.link}

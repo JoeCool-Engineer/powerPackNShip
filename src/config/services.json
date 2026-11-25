@@ -39,8 +39,8 @@
     {
       "service": "AZ Security Card",
       "cards": "1",
-      "price": "$34",
-      "custody": ""
+      "price": "$40",
+      "custody": "Required"
     },
     {
       "service": "AZ DPS 2000 - DPS Fingerprint Check",

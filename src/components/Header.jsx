@@ -1,59 +1,76 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import holidays from "../config/holidays.json";
 
 const MAPS_CID_URL = "https://www.google.com/maps?cid=12015125235544774477";
+const DAY_MS = 86_400_000;
 
-// Get all holidays whose 7-day preview window includes today
-function getUpcomingHolidays(holidayConfig) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+const phoenixDateFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Phoenix",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+});
+const holidayDateFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: "UTC",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 
-  const upcoming = [];
+function getPhoenixDate() {
+  const parts = phoenixDateFormatter.formatToParts(new Date());
+  const value = (type) => Number(parts.find((part) => part.type === type).value);
+  // Represent Phoenix calendar dates in UTC for date-only comparisons.
+  return Date.UTC(value("year"), value("month") - 1, value("day"));
+}
 
-  holidayConfig.forEach((holiday) => {
-    if (!holiday?.date || !holiday?.label || !holiday?.adjustedHours) return;
+const holidaySchedule = holidays.map((holiday) => {
+  const [year, month, day] = holiday.date.split("-").map(Number);
+  return { ...holiday, day: Date.UTC(year, month - 1, day) };
+}).sort((a, b) => a.day - b.day);
 
-    const [year, month, day] = holiday.date.split("-").map(Number);
-    const holidayDate = new Date(year, month - 1, day);
-    holidayDate.setHours(0, 0, 0, 0);
-
-    const previewStart = new Date(holidayDate);
-    previewStart.setDate(previewStart.getDate() - 7);
-
-    if (today >= previewStart && today <= holidayDate) {
-      const isPreview = today < holidayDate;
-      const dateLabel = holidayDate.toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-
-      upcoming.push({
-        id: holiday.date,
-        label: holiday.label,
-        adjustedHours: holiday.adjustedHours,
-        dateLabel,
-        isPreview,
-      });
-    }
-  });
-
-  return upcoming;
+function getSchedule(phoenixDate) {
+  const date = new Date(phoenixDate);
+  const isDecember = date.getUTCMonth() === 11;
+  const weekdayHours = isDecember ? "8:30 AM - 6:00 PM" : "8:30 AM - 5:30 PM";
+  const saturdayHours = isDecember ? "9:00 AM - 4:00 PM" : "10:00 AM - 4:00 PM";
+  const weekday = date.getUTCDay();
+  const regularHours = weekday === 0 ? "Closed" : weekday === 6 ? saturdayHours : weekdayHours;
+  const todayHoliday = holidaySchedule.find((holiday) => holiday.day === phoenixDate);
+  return {
+    title: isDecember ? "December hours" : "Regular hours",
+    lines: [`Mon-Fri: ${weekdayHours}`, `Sat: ${saturdayHours}`, "Sun: Closed"],
+    todayHours: todayHoliday?.adjustedHours ?? regularHours,
+  };
 }
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isCompactMobile, setIsCompactMobile] = useState(false);
-  const [isBannerDismissed, setIsBannerDismissed] = useState(false);
+  const [dismissedBannerDate, setDismissedBannerDate] = useState(null);
+  const [phoenixDate, setPhoenixDate] = useState(getPhoenixDate);
+  const schedule = getSchedule(phoenixDate);
+  const upcomingHolidays = holidaySchedule.filter(
+    (holiday) => holiday.day >= phoenixDate && holiday.day <= phoenixDate + 7 * DAY_MS
+  );
 
-  const upcomingHolidays = useMemo(() => getUpcomingHolidays(holidays), []);
+  useEffect(() => {
+    const refreshDate = () => setPhoenixDate(getPhoenixDate());
+    let timeout;
+    const scheduleRefresh = () => {
+      refreshDate();
+      timeout = window.setTimeout(scheduleRefresh, 60_000 - (Date.now() % 60_000));
+    };
 
-  const schedule = {
-    title: "Hours",
-    lines: ["Mon-Fri: 8:30 AM - 5:30 PM", "Sat: 10:00 AM - 4:00 PM", "Sun: Closed"],
-  };
+    scheduleRefresh();
+    document.addEventListener("visibilitychange", refreshDate);
+    return () => {
+      window.clearTimeout(timeout);
+      document.removeEventListener("visibilitychange", refreshDate);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -109,17 +126,17 @@ export default function Header() {
       }`}
     >
       {/* HOLIDAY BANNER */}
-      {upcomingHolidays.length > 0 && !isBannerDismissed && (
+      {upcomingHolidays.length > 0 && dismissedBannerDate !== phoenixDate && (
         <div className="bg-green-600 text-white text-xs md:text-sm">
           <div className="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between gap-2">
             <div className="flex flex-col md:flex-row md:items-center md:gap-2">
-              <span className="font-semibold">Upcoming Holiday Hours:</span>
+              <span className="font-semibold">Holiday Hours:</span>
               <span className="opacity-90">
                 {upcomingHolidays
                   .map(
                     (h) =>
-                      `${h.label} (${h.dateLabel}) – ${h.adjustedHours}${
-                        h.isPreview ? "" : " (Today)"
+                      `${h.label} (${holidayDateFormatter.format(h.day)}) – ${h.adjustedHours}${
+                        h.day === phoenixDate ? " (Today)" : ""
                       }`
                   )
                   .join(" • ")}
@@ -127,7 +144,7 @@ export default function Header() {
             </div>
             <button
               type="button"
-              onClick={() => setIsBannerDismissed(true)}
+              onClick={() => setDismissedBannerDate(phoenixDate)}
               className="rounded-full border border-white/60 px-2 text-xs font-semibold hover:bg-white hover:text-green-700 transition-colors"
               aria-label="Dismiss holiday hours banner"
               title="Dismiss"
@@ -163,29 +180,30 @@ export default function Header() {
           </div>
 
           {/* CENTER: Hours + holiday notes */}
-          <div
-            className={`flex-1 flex justify-center overflow-hidden transition-[max-height,opacity] duration-200 ${
-              collapseInfo ? "max-h-0 opacity-0 pointer-events-none" : "max-h-96 opacity-100"
-            }`}
-          >
-            <div className="text-center text-sm md:text-sm text-slate-700 leading-snug">
-              <div className="font-semibold text-slate-900">{schedule.title}</div>
-              {schedule.lines.map((line) => (
-                <div key={line}>{line}</div>
-              ))}
-
-              {upcomingHolidays.length > 0 && (
-                <div className="mt-1 text-[11px] md:text-xs text-slate-600">
-                  <div className="font-semibold">Upcoming holiday hours:</div>
-                  {upcomingHolidays.map((h) => (
-                    <div key={h.id}>
-                      {h.label}: {h.adjustedHours}{" "}
-                      {h.isPreview ? `(on ${h.dateLabel})` : `(Today)`}
-                    </div>
-                  ))}
-                </div>
-              )}
+          <div className="flex-1 text-center text-sm text-slate-700 leading-snug">
+            <div className="font-semibold text-slate-900" aria-live="polite">
+              Today&apos;s Hours: {schedule.todayHours}
             </div>
+            {!collapseInfo && (
+              <div className="mt-1">
+                <div className="font-semibold text-slate-900">{schedule.title}</div>
+                {schedule.lines.map((line) => (
+                  <div key={line}>{line}</div>
+                ))}
+
+                {upcomingHolidays.length > 0 && (
+                  <div className="mt-1 text-[11px] md:text-xs text-slate-600">
+                    <div className="font-semibold">Holiday hours:</div>
+                    {upcomingHolidays.map((h) => (
+                      <div key={h.date}>
+                        {h.label}: {h.adjustedHours}{" "}
+                        {h.day === phoenixDate ? "(Today)" : `(on ${holidayDateFormatter.format(h.day)})`}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* RIGHT: Phone + Address */}

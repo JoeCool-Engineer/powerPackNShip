@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteRule ^(?:pack-it|ship-it)/?$ /pack-ship [R=301,L,NC]
+  RewriteRule ^print-it/?$ /document-services [R=301,L,NC]
+  RewriteRule ^get-it/?$ /mailbox-rental [R=301,L,NC]
+  RewriteRule ^fingerprint/?$ /fingerprinting [R=301,L,NC]
+
+  # Don't rewrite requests for actual files or folders
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Serve the React app for known service routes and use it as the 404 body.
+  RewriteRule ^(?:pack-ship|document-services|mailbox-rental|fingerprinting)/?$ index.html [L,NC]
+</IfModule>
+
+ErrorDocument 404 /index.html
